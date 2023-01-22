@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <title>Tu Menu al gusto</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="./images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+<h1>La Mejor opción para armar sus rícas comidas</h1>
+<!-- <button id="prueba" class="btn-prueba"> boton de Pruba</button> -->
+
+  <!--  navbar -->
+
+  <nav class="navbar navbar-expand-lg navbar-black bg-dark">
+    <img class="logo" src="./images/logo.png" alt="">
+    <a class="navbar-brand" href=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">Arma tu Menu</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a id="proteina" class="dropdown-item" href="#">Pollo</a>
+            <a id="proteina" class="dropdown-item" href="#">Cerdo</a>
+            <a id="proteina" class="dropdown-item" href="#">Pescado</a>
+          </div>
+        </li>
+      </ul> -->
+      <div class="search">
+        <div class="d-flex" role="search">
+          <input id="input" class="form-control me-2" type="text" placeholder="Search" aria-label="Search">
+          <button id="buscador" class="btn btn-dark">Search</button>
+        </div>
+      </div>
+      <div class="form-inline my-2 my-lg-0">
+        <a href="#" class="btn btn-warning">Login</a>
+        <a id="cart-button">
+          <img id="cart-icon" src="images/cart.png">
+        </a>
+        <!-- render items en cart -->
+        <div id="cart-nav"></div>
+      </div>
+    </div>
+  </nav><br><br>
+
+  <!--  End Navbar -->
+
+
+  <div id="contenedor" class="contenedor"></div>
+
+  <br>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="box-element">
+          <table class="table">
+
+            <!-- Elemento renderizable del total -->
+            <div id="total"></div>
+            <!-- final de renderizable del total -->
+          </table>
+        </div>
+        <div class="box-element">
+          <div class="cart-row">
+            <div style="flex:2"></div>
+            <div style="flex:2"><strong>Item</strong></div>
+            <div style="flex:1"><strong>Price</strong></div>
+            <div style="flex:1"><strong>Quantity</strong></div>
+            <div style="flex:1"><strong>Total</strong></div>
+          </div>
+          <!-- elemento renderizable del carro -->
+          <div id="cart-row"></div>
+          <!-- final del elemento renderizable del carro -->
+        </div>
+      </div>
+    </div>
+    <br><br>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"></script>
+    <script src="./javascript.js"></script>
+
+    <!-- Enlace a sweet alert y toastify-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./sweetalert.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"> </script>
+</body>
+
+</html>
