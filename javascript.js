@@ -8,6 +8,7 @@ const productos = [
     { id: 06, nombre: "Papas Rusticas ", categoria: "CONTORNO", precio: 1500.00, stock: 10, img: "./img/Papas.webp" }
 ]
 
+
 let carritoJSON = "" 
 let totalFinal = ""
 let unidades = ""
@@ -30,25 +31,41 @@ if (localStorage.getItem("Carrito")) {
 }
 
 /*              Buscador       Filtros                        */
-let proteina = document.getElementById("PROTEINA")
-let contorno = document.getElementById("CONTORNO")
-proteina.addEventListener("click", filtroCategoria)
-acompañamiento.addEventListener("click", filtroCategoria)
+// Obtener los elementos del DOM
+let input = document.getElementById("input"); // el input del buscador
+let button = document.getElementById("buscador"); // el boton del buscador
 
-function filtroCategoria(e) {
-    e.preventDefault()
-    let categoriafiltrado = productos.filter(producto => producto.categoria.toLowerCase() == e.target.id)
-    renderizar(categoriafiltrado)
+// Agregar evento click al botón
+button.addEventListener("click", buscar);
+
+// Función para buscar
+function buscar() {
+    // Obtener el valor del input
+    let busqueda = input.value.toLowerCase();
+
+    // Filtrar el array de productos
+    let productosFiltrados = productos.filter(producto => {
+        let nombre = producto.nombre.toLowerCase();
+        let categoria = producto.categoria.toLowerCase();
+        return nombre.includes(busqueda) || categoria.includes(busqueda);
+    });
+
+    // Renderizar los productos filtrados
+    renderizar(productosFiltrados);
+}
+function limpiarBusqueda() {
+    input.value = ""; // Limpia el contenido del input
+    renderizar(productos); // Vuelve a renderizar todos los productos originales
 }
 
-let input = document.getElementById("input")
-let button = document.getElementById("buscador")
-button.addEventListener("click", buscar)
-function buscar(e) {
-    e.preventDefault()
-    let productoFiltrado = productos.filter(producto => producto.nombre.toLowerCase().includes(input.value.toLowerCase()) || producto.categoria.toLowerCase().includes(input.value.toLowerCase()))
-    renderizar(productoFiltrado)
-}
+let limpiar = document.getElementById("limpiar");
+limpiar.addEventListener("click", limpiarBusqueda);
+
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+        limpiarBusqueda();
+    }
+});
 
 /*                           Renderizar productos                  */
 function renderizar(array) {
@@ -95,6 +112,8 @@ function addItem(e) {
             })
         carritoJSON = JSON.stringify(carrito)
         localStorage.setItem("Carrito", carritoJSON)
+
+        //           TOESTIFY
         Toastify({
             text: "Producto agregado al carrito",
             duration: 3000,
@@ -103,7 +122,7 @@ function addItem(e) {
             style: {
                 background: "linear-gradient(to right, #00b09b, #96c93d)",
             },
-            // width:"400px",
+            width:"600px",
             // display:"block",
             maxWidth:"50%",
             className: "toastify",

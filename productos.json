@@ -1,0 +1,9 @@
+
+[
+    {"id": 01, "nombre": "Pollo al Horno", "categoria": "PROTEINA", "precio": 4000.00, "stock": 10, "img": "./img/Pollo.webp" },
+    {"id": 02, "nombre": "Cerdo Horneado", "categoria": "PROTEINA", "precio": 3500.00, "stock": 10, "img": "./img/Cerdo.webp" },
+    {"id": 03, "nombre": "Salmon al Horno", "categoria": "PROTEINA", "precio": 7000.00, "stock": 10, "img": "./img/Pescado.webp" },
+    {"id": 04, "nombre": "Arroz ", "categoria": "CONTORNO", "precio": 1990.00, "stock": 10, "img": "./img/Arroz.webp" },
+    {"id": 05, "nombre": "Fideos in amore ", "categoria": "CONTORNO", "precio": 1000.00, "stock": 10, "img": "./img/Fideos.webp" },
+    {"id": 06, "nombre": "Papas Rusticas ", "categoria": "CONTORNO", "precio": 1500.00, "stock": 10, "img": "./img/Papas.webp" }
+]
